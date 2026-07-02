@@ -1,8 +1,19 @@
-manifest.json
+# Python
+__pycache__/
+**/__pycache__/
+*.pyc
+.DS_Store
+
+# Virtualenv
+/cvenv
+
+# Raw dataset (download separately)
 /val2017
 /annotations
-embeddings.npy
-ids.json
-index_flat.faiss
-/cvenv
-/__pycache__
+
+# Derived artifacts — regenerate via the pipeline; anchored to root so the
+# app/ copies (committed via Git LFS for the demo) are NOT ignored.
+/manifest.json
+/embeddings.npy
+/ids.json
+/index_flat.faiss

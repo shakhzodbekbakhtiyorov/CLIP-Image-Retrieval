@@ -1,17 +1,4 @@
-"""Embed every image in the manifest with OpenCLIP ViT-B/32.
-
-Pipeline per image: load -> CLIP preprocess -> image encoder -> L2-normalize.
-Normalized vectors mean inner product == cosine similarity, which is what the
-FAISS IndexFlatIP in the next step relies on.
-
-Outputs (saved next to the manifest):
-    embeddings.npy   float32 array, shape (N, D), each row unit-norm
-    ids.json         list of {"id", "image_path"} aligned row-for-row with the
-                     embeddings (row i <-> ids[i]); this is the id->path map
-
-BACKBONE IS FIXED: OpenCLIP ViT-B/32, pretrained 'openai'. Do not change it --
-the same model's text encoder is reused unchanged in phase 2.
-"""
+"""Embed all images with OpenCLIP ViT-B/32 -> L2-normalized embeddings.npy + ids.json."""
 
 import argparse
 import json

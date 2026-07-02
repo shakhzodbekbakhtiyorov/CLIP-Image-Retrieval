@@ -1,15 +1,4 @@
-"""Build an exact FAISS flat index from the image embeddings.
-
-Vectors are already L2-normalized, so inner product == cosine similarity.
-IndexFlatIP does exact (brute-force) search -- no approximation. This is the
-correctness baseline that the ANN index (step 8) will be measured against.
-
-Input:  embeddings.npy  (N, D) float32, unit-norm
-Output: index_flat.faiss
-
-Row i of the index corresponds to ids.json[i] -- FAISS returns row indices,
-which you map back to image paths via ids.json.
-"""
+"""Build an exact FAISS IndexFlatIP from embeddings.npy (unit-norm -> IP == cosine)."""
 
 import argparse
 import os

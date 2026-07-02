@@ -1,18 +1,4 @@
-"""Build a manifest for the COCO val2017 slice.
-
-Reads the instances (categories) and captions annotations and writes one
-manifest.json: a list of records, one per image, each holding:
-    - id            COCO image id (int)
-    - file_name     bare filename, e.g. 000000397133.jpg
-    - image_path    path relative to this repo, e.g. val2017/000000397133.jpg
-    - width, height
-    - category_ids  sorted unique COCO category ids present in the image
-    - categories    the human-readable names for those ids (relevance labels)
-    - captions      list of caption strings (used later, in phase 2)
-
-Phase 1 (image->image) only needs image_path + categories. We grab captions
-now so we don't have to re-parse later for text->image.
-"""
+"""Build manifest.json from COCO annotations: per image id, path, categories, captions."""
 
 import argparse
 import json
