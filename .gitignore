@@ -1,0 +1,8 @@
+manifest.json
+/val2017
+/annotations
+embeddings.npy
+ids.json
+index_flat.faiss
+/cvenv
+/__pycache__
