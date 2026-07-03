@@ -1,5 +1,9 @@
 # CLIP Image Retrieval (COCO val2017)
 
+[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Demo-Hugging%20Face%20Spaces-blue)](https://huggingface.co/spaces/shakhabrat/CLIP-Image-Retrieval)
+
+**▶ Live demo:** https://huggingface.co/spaces/shakhabrat/CLIP-Image-Retrieval
+
 Content-based **image search** over a ~5,000-image COCO val2017 slice, built on a
 single CLIP backbone. It supports two query modes in one shared embedding space:
 
